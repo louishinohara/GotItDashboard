@@ -13,7 +13,6 @@ function App() {
       <CustomAppBar />
       <Grid container>
         <Grid item xs={6}>
-          <ChatBot />
         </Grid>
         <Grid item>
           asda

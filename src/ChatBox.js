@@ -1,29 +1,20 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid } from '@material-ui/core';
+import { Widget } from 'react-chat-widget';
+import 'react-chat-widget/lib/styles.css';
 
-import CustomAppBar from './AppBar';
-import ChatBot from './ChatBox';
-
-function App() {
+function ChatBot() {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
-      <CustomAppBar />
-      <Grid container>
-        <Grid item xs={6}>
-          <ChatBot />
-        </Grid>
-        <Grid item>
-          asda
-        </Grid>
-      </Grid>
+        <Widget 
+        />
     </div>
   );
 }
 
-export default App;
+export default ChatBot;
 
 const useStyles = makeStyles((theme) => ({
   root: {

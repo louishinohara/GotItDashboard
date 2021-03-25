@@ -5,6 +5,7 @@ import 'react-chat-widget/lib/styles.css';
 import profilePic from './assets/me.jpeg';
 
 // https://getstream.io/chat/sdk/react/
+
 function ChatBot() {
     const classes = useStyles();
     const [awaitResponse, setAwaitResponse] = React.useState(false);

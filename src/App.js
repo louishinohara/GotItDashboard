@@ -4,19 +4,18 @@ import { Grid } from '@material-ui/core';
 
 import CustomAppBar from './AppBar';
 import ChatBot from './ChatBox';
-
+import FormContent from './FormContent';
 function App() {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
       <CustomAppBar />
-      <Grid container>
+      <Grid container direction='row'  >
         <Grid item xs={6}>
+        Chat Box Stuff
         </Grid>
-        <Grid item>
-          asda
-        </Grid>
+        <FormContent/>
       </Grid>
     </div>
   );

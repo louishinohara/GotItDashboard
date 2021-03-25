@@ -13,18 +13,29 @@ function FormContent() {
     const [netIDField, setNetIDField] = React.useState("");
     const [ruIDField, setRuIDField] = React.useState("");
     const [creditCardField, setCreditCardField] = React.useState("");
+    const [submitReady, isSubmitReady] = React.useState(false);
 
     const handleNameField = (e) => {
         setNameField(e.target.value);
+        checkSubmitReady();
     };
     const handleNetIDField = (e) => {
         setNetIDField(e.target.value);
+        checkSubmitReady();
     };
     const handleRuIDField = (e) => {
         setRuIDField(e.target.value);
+        checkSubmitReady();
     };
     const handleCreditCardField = (e) => {
         setCreditCardField(e.target.value);
+        checkSubmitReady();
+    };
+
+    const checkSubmitReady = () => {
+        if (nameField != "" && netIDField != "" && ruIDField != "" && creditCardField != "") {
+            isSubmitReady(true);
+        }
     };
 
     React.useEffect(() => {
@@ -32,7 +43,9 @@ function FormContent() {
         setTimeout(function () { setNetIDField('uls532') }, 2000);
         setTimeout(function () { setRuIDField('189430257') }, 3000);
         setTimeout(function () { setCreditCardField('4532-4325-3423-2432') }, 4000);
-
+        setTimeout(function () { isSubmitReady(true)}, 4000);
+        checkSubmitReady();
+        
     }, [])
 
     return (
@@ -63,7 +76,7 @@ function FormContent() {
             </Grid>
             <Grid container direction='row' justify='flex-end'>
                 <Grid item >
-                    <Button className={classes.submitButton} variant="contained">Submit</Button>
+                    <Button className={classes.submitButton}  disabled={!submitReady} variant="contained">Submit</Button>
                 </Grid>
             </Grid>
         </Paper>
@@ -75,14 +88,15 @@ export default FormContent;
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        width: '45%',
-        margin: 16,
-        paddingLeft: 8,
-        backgroundColor: '#252526'
+        margin: 'auto',
+        padding: 8,
+        backgroundColor: '#2c2e31',
+        borderRadius: 8,
+        marginTop: 20
     },
     submitButton: {
         margin: 8,
-        backgroundColor: '#818181'
+        backgroundColor: '#3f51b5'
     },
     textField: {
         margin: 16,
@@ -93,6 +107,6 @@ const useStyles = makeStyles((theme) => ({
         flexGrow: 1,
     },
     multilineColor: {
-        color: '#adadad'
+        color: '#3f51b5'
     }
 }));

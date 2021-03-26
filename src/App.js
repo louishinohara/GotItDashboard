@@ -5,6 +5,7 @@ import { Grid } from '@material-ui/core';
 import CustomAppBar from './AppBar';
 import Messenger from './Messenger';
 import FormContent from './FormContent';
+import EmbeddedBrowser from './EmbeddedBrowser';
 
 function App() {
   const classes = useStyles();
@@ -19,7 +20,7 @@ function App() {
         <Grid item xs={6}>
           <Grid container direction="column" justify="space-between">
             <Grid item>
-              <div dangerouslySetInnerHTML={{ __html: content }}></div>
+              <EmbeddedBrowser />
             </Grid>
             <Grid item>
               <FormContent />
